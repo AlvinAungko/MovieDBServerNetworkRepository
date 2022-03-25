@@ -16,9 +16,11 @@ class MovieShowCaseViewController: UIViewController {
     
     fileprivate let movieModelLayer = MovieModelLayer.movieModel
     
+    // MARK: This is where the data is permanently stored and this list will grow accoring to every network call that user submitted and this list will send data to the collectionView which will  present the information to the user
+    
     var movieShowCaseFilms = Array<MixedMoviesAndSeriesList>()
     
-    
+    //MARK: Temporarily storing data from the networkCall since the data inside this variable will be overwritted when it is recalled again, but once it recieves the value, it immediately appends it to the movieShowCaseFilms array.
 
     var movieShowCaseList:Array<MixedMoviesAndSeriesList>?
     {

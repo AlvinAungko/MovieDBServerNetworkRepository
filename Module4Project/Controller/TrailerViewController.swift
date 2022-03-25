@@ -25,7 +25,7 @@ class TrailerViewController: UIViewController {
         }
     }
     
-    // Capture the value sent from the DetailViewController
+    // MARK: Capture the value sent from the DetailViewController
     
     var trailerList:TVTrailer?
     
@@ -38,6 +38,9 @@ class TrailerViewController: UIViewController {
         super.viewDidLoad()
         setDataSourceAndDelegate()
         registerCells()
+        
+        // MARK: This is to prevent the app from crashing due to capturing nil
+        
         reloadTheCollectionView(data: trailerList?.results ?? Array<Trailer>())
         
 //        guard let self = self else {return}

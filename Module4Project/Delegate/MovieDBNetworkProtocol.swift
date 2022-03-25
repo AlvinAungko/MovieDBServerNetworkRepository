@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Declaring Movie Protocol
 
 protocol MovieProtocol
 {
@@ -27,6 +28,8 @@ protocol MovieProtocol
     
 }
 
+// MARK: Delcare Series Protocol
+
 protocol SeriesProtocol
 {
     
@@ -41,6 +44,8 @@ protocol SeriesProtocol
     func searchTheSeries(seriesName:String,page:Int,completion:@escaping(MDBResponse<PopulaBestrSeries>)->Void)
 }
 
+// MARK: Delcaring Actor Protocol
+
 protocol ActorProtocol
 {
     func fetchTheActorList(page:Int,completion:@escaping(MDBResponse<ActorDataModel>)->Void)
@@ -50,10 +55,14 @@ protocol ActorProtocol
     func fetchTheListOfCombinedMoviesThatTheActorStaredIn(actorID:Int,completion:@escaping(MDBResponse<ActorCombinedMovie>)->Void)
 }
 
+// MARK: Declaring Genre Protocol
+
 protocol GenreProtocol
 {
     func fetchGenresListForMovies(completion:@escaping(MDBResponse<GenresModel>)->Void)
 }
+
+// MARK: Declaring All Network Protocol
 
 protocol MovieDBNetworkProtocol
 {

@@ -27,7 +27,7 @@ class MovieViewController: UIViewController,ActorDelegate {
     
     let movieDBAgent = NetworkingAgentAPI.shared
     
-    // Upcoming Movie Data
+    // MARK: Upcoming Movie Data
     
     var upcomingMovieFromServer:UpcomingMovie?
     {
@@ -39,7 +39,7 @@ class MovieViewController: UIViewController,ActorDelegate {
         }
     }
     
-    // Popular Movie Data
+    // MARK: Popular Movie Data
     
     var popularMovieDataFromServer:PopularMovieList?
     {
@@ -52,7 +52,7 @@ class MovieViewController: UIViewController,ActorDelegate {
         }
     }
     
-    // Series Data
+    // MARK: Series Data
     
     var seriesDataFromServer : PopulaBestrSeries?
     {
@@ -66,7 +66,7 @@ class MovieViewController: UIViewController,ActorDelegate {
         }
     }
     
-    // Genres Data
+    // MARK: Genres Data
     
     var genreList:[GenresType]?{
         didSet
@@ -77,6 +77,8 @@ class MovieViewController: UIViewController,ActorDelegate {
             }
         }
     }
+    
+    // MARK: Top Rated Movie Data
     
     var topRatedMovie:TopRatingMovie?
     {
@@ -89,6 +91,8 @@ class MovieViewController: UIViewController,ActorDelegate {
         }
     }
     
+    // MARK: Actor Data
+    
     var actorReceivedFromTheServer:ActorDataModel?
     {
         didSet
@@ -100,7 +104,7 @@ class MovieViewController: UIViewController,ActorDelegate {
         }
     }
     
-    // Genre CombinedMovieList
+    // MARK: Genre CombinedMovieList
     
     var movieCombinedList = Array<MovieList>()
     
@@ -221,13 +225,13 @@ extension MovieViewController
     
     
     /*
+     // MARK: Presenting movies by category to the user.
      
-        Presenting movies by category to the user.
-     
-        1. First, we fetch the genres values from the server and bind it to our view
-        2. We make closures to capture the genre value that the user tapped.
-        3. Once we get the genre value, we extract the movie list which is releated to that genre value(iD) from our dictionary.
-        4. After the movie list is extracted, we present that list to the user.
+     1. First, we fetch the genres values from the server and bind it to our view
+     2. We make closures to capture the genre value that the user tapped.
+     3. Once we get the genre value, we extract the movie list which is releated to that genre value(iD) from our dictionary.
+     4. After the movie list is extracted, we present that list to the user.
+        
      
      */
     

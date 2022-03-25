@@ -16,15 +16,15 @@ class ActorDetailViewController: UIViewController {
     
     fileprivate let actorModelLayer = ActorModelLayer.actorModelLayer
     
+    // MARK: ActorMovies Data
+    
     var actorCombinedFilm:Array<MixedMoviesAndSeriesList>?
     {
         didSet
         {
             if let _ = actorCombinedFilm {
                 self.actorMovieList.reloadData()
-                actorCombinedFilm?.forEach({ movie in
-                    debugPrint(movie.originalName ?? "")
-                })
+               
             } else {
                 debugPrint("No data is presented")
             }
@@ -44,6 +44,8 @@ class ActorDetailViewController: UIViewController {
     var actorID:Int?
     
     let networkAgent = NetworkingAgentAPI.shared
+    
+    // MARK: The Actor Detail
     
     var detailOfTheActor:ActorDetailDataModel?
     {
@@ -92,6 +94,8 @@ class ActorDetailViewController: UIViewController {
 
 extension ActorDetailViewController
 {
+    
+    
     private func fetchTheDetailOfTheActor(actorID:Int)
     {
         actorModelLayer.fetchTheDetailOfTheActor(actorID: actorID) { [weak self] actorDetail in
@@ -121,6 +125,8 @@ extension ActorDetailViewController
             switch actorCombinedFilm
             {
             case.sucess(let actorCombinedFilm):
+                
+                // MARK: Transfering the properties from one list to another list and passing that list to the created variable so that it can present the data recieved to the user with  the use of collection view
                 
                 self.actorCombinedFilm = actorCombinedFilm.cast?.map({
                     
@@ -169,6 +175,8 @@ extension ActorDetailViewController:UICollectionViewDelegateFlowLayout,UICollect
         let cell = actorMovieList.bindCollectionCellsToYourCollectionView(cell: BestFilmCollectionViewCell.identifier, indexPath: indexPath) as BestFilmCollectionViewCell
         
         cell.mixedMovieAndSeries = actorCombinedFilm?[indexPath.row]
+        
+        // MARK: Capturing data from closure when it is tabbed and navigate that data to another view controller.
         
         cell.onTabFilm = { [weak self]
             filmID,TypeOfFilm in

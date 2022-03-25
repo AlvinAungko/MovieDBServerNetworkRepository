@@ -10,7 +10,7 @@ import SDWebImage
 
 class MovieDetailViewController: UIViewController {
     
-    var arraySample = Array.init(repeating: 100, count: 100_00_00_00)
+    
     
     @IBOutlet weak var heightOfCastCollectionView: NSLayoutConstraint!
     @IBOutlet weak var castCollectionView: UICollectionView!
@@ -27,7 +27,7 @@ class MovieDetailViewController: UIViewController {
     fileprivate let seriesModelLayer = SeriesModelLayer.seriesModelLayer
     
     
-    // Actor
+    // MARK: Actor Data
     
     var castList:Array<Actor>?
     {
@@ -40,6 +40,7 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
+    // MARK: Cast Data
     
     var actorList:Array<Cast>?
     {
@@ -54,7 +55,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     
-    // Creator
+    // MARK: Creator
     
     var creators:Array<CreatedBy>?
     {
@@ -69,7 +70,7 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
-    // Production Company
+    // MARK: Production Company
     
     var productionCompanies:Array<ProductionCompany>?
     {
@@ -83,7 +84,7 @@ class MovieDetailViewController: UIViewController {
        
     }
     
-    // Genres
+    //MARK: Genres
     
     var genre:Array<Genre>?
     {
@@ -96,7 +97,7 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
-    // Trailer
+    //MARK: Trailer
     
     var trailer:TVTrailer?
     
@@ -254,6 +255,8 @@ class MovieDetailViewController: UIViewController {
 
 extension MovieDetailViewController
 {
+    //MARK: Calling network call according to filmType
+    
     private func doNetworkCallAccordingToTheTypeOfFilm(id:Int,typeOfFilm:TypeOfTheFilm)
     {
         switch typeOfFilm

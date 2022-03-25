@@ -22,9 +22,12 @@ class ActorListPaginationViewController: UIViewController {
 //    var hasNumberOfPages = Bool()
     
     
+    // MARK: This is where the data is permanently stored and this list will grow accoring to every network call that user submitted and this list will send data to the collectionView which will  present the information to the user
     
     var appendActorList = Array<Actor>()
     
+    //MARK: Temporarily storing data from the networkCall since the data inside this variable will be overwritted when it is recalled again, but once it recieves the value, it immediately appends it to the appendActorList array.
+
     
     var actirData : Array<Actor>?
     {
@@ -56,11 +59,15 @@ class ActorListPaginationViewController: UIViewController {
 
 }
 
+//MARK: Keeping the reference between the closure and the self class weak is essential so that it is affordable to deallocate that self class from the memory
+
 extension ActorListPaginationViewController
 {
     private func callTheNetwork(pageNumber:Int)
     {
         actorModelLayer.fetchTheActorList(page:pageNumber){ [weak self]  actorData in
+            
+            // MARK: The code below will work only if the viewcontroller is still on the memory
             
             guard let self = self else {
                 return
@@ -70,7 +77,10 @@ extension ActorListPaginationViewController
             {
             case.sucess(let actorData):
                 
+                
+                
                 self.actirData = actorData.results ?? Array<Actor>()
+                
                 self.currentPage = actorData.page ?? 0
                 self.numberOfPages = actorData.totalPages ?? 0
                 
@@ -134,6 +144,8 @@ extension ActorListPaginationViewController: UICollectionViewDataSource,UICollec
         
         return CGSize(width: actorListCollectionView.bounds.width/3.5, height: 280)
     }
+    
+    // MARK: Will fetch new data if we are at the last row and pages are still left
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
