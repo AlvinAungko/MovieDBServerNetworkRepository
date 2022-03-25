@@ -9,8 +9,6 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-   
-    
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var dataEntryTextField: UITextField!
     @IBOutlet weak var backImageView: UIImageView!
@@ -27,27 +25,12 @@ class SearchViewController: UIViewController {
     
     let networkAgent = NetworkingAgentAPI.shared
     
+    // MARK: It is in this variable where the data seems to be consistent throughout the networkcalls as this variable stores a list of data received from every networkcall and presents it to the user.
+    
     var mixedFilms = Array<MixedMoviesAndSeriesList>()
     
+    // MARK: In this variable, the data doesn't seem to be consistent as it changes everytime a new network call is carried out, but once it captures the value from the network call, it appends it to the mixedFilm Array.
     
-    
-    // Appending the data about current page and total pages
-    
-    var filmObject: UpcomingMovie?
-    {
-        didSet
-        {
-            if let data = filmObject
-            {
-                self.currentPage = data.page ?? 0
-                self.totalPages = data.totalPages ?? 0
-            }
-        }
-    }
-    
-    
-    
-    // Appending the moviesList to the mixedFilms
     
     var mixedMovies:Array<MixedMoviesAndSeriesList>?
     {
@@ -61,7 +44,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    // Appending the seriesList to the mixedFilms
+    // MARK: In this variable, the data doesn't seem to be consistent as it changes everytime a new network call is carried out, but once it captures the value from the network call, it appends it to the mixedFilm Array.
     
     var mixedSeries:Array<MixedMoviesAndSeriesList>?
     {
@@ -134,7 +117,7 @@ extension SearchViewController
 extension SearchViewController
 {
 
-    // searching The Movies
+    
     
     private func searchTheMovie(movieName:String,page:Int)
     {
@@ -265,10 +248,15 @@ extension SearchViewController: UICollectionViewDataSource,UICollectionViewDeleg
         let isLastRow = (indexPath.row) == (mixedFilms.count - 1)
         let hasMorePages = currentPage <= totalPages
         
+        // MARK: This network call is poorly optimized because the network call depends on the pages available in the movie server. So in some cases, the pages of the movie might run out, however, there might be some available pages in series where we can extract data. But since this network call entirely depends on the pages available in the movie server
+        
+        //MARK: The best way to solve this issue is to compare the total pages of two network calls and assign the bigger one to a new variable and the network call can be adjusted to depend on that newly created variable.
+        
+        
+        
         if isLastRow && hasMorePages
         {
             currentPage += 1
-//           extractMoreData(movieName: displayText, page: currentPage)
             searchTheMovie(movieName: displayText, page: currentPage)
         }
         
@@ -282,6 +270,8 @@ extension SearchViewController: UICollectionViewDataSource,UICollectionViewDeleg
     
 }
 
+// MARK: when the search is made, all of the data from the list is removed and a new network call has been conducted.
+
 extension SearchViewController:UISearchBarDelegate
 {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -292,6 +282,8 @@ extension SearchViewController:UISearchBarDelegate
         
         let movieTextEntry = searchBar.text ?? "No Data"
         debugPrint(movieTextEntry)
+        
+        // MARK: Configuring the movieName for url to recognzie space character as %20
         
         let actualText:String = movieTextEntry.map { text -> String in
             if text == " "

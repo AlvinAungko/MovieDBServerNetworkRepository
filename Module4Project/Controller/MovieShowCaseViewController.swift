@@ -20,7 +20,7 @@ class MovieShowCaseViewController: UIViewController {
     
     var movieShowCaseFilms = Array<MixedMoviesAndSeriesList>()
     
-    //MARK: Temporarily storing data from the networkCall since the data inside this variable will be overwritted when it is recalled again, but once it recieves the value, it immediately appends it to the movieShowCaseFilms array.
+    //MARK: Temporarily storing data from the networkCall since the data inside this variable will be overwritten when it is recalled again, but once it recieves the value, it immediately appends it to the movieShowCaseFilms array.
 
     var movieShowCaseList:Array<MixedMoviesAndSeriesList>?
     {
@@ -152,11 +152,12 @@ extension MovieShowCaseViewController: UICollectionViewDataSource,UICollectionVi
     }
 }
 
+
+
 extension MovieShowCaseViewController
 {
     private func returnTheArrayOfMixedMoviesAndSeries(topRatedFilm:TopRatingMovie)->Array<MixedMoviesAndSeriesList>
     {
-        
         
         return topRatedFilm.results?.map({ topMovie -> MixedMoviesAndSeriesList in
            
