@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-BoldItalic.ttf">
+            <string>Roboto-BoldItalic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BestActorCollectionViewCell" customModule="Module4Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thirdImage" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-j3-qQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanjuro Kamado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUe-1d-AMW">
+                        <rect key="frame" x="5" y="200" width="270" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Cbi-aO-GVd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="18"/>
+                        <color key="textColor" name="Text Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbn-bm-PtX">
+                        <rect key="frame" x="5" y="236" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Pcc-iw-CsL"/>
+                            <constraint firstAttribute="width" constant="20" id="lO6-pe-M7X"/>
+                        </constraints>
+                        <color key="tintColor" name="Secondary Color"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Like 10 Movies" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2G-2w-HL7">
+                        <rect key="frame" x="37" y="231" width="238" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="yQX-y2-3CI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="13"/>
+                        <color key="textColor" name="Text Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Full Bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-Ex-gZo">
+                        <rect key="frame" x="230" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="X6U-fw-uIk"/>
+                            <constraint firstAttribute="height" constant="40" id="u48-Uf-Sen"/>
+                        </constraints>
+                    </imageView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty Bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="0NO-kR-SLD">
+                        <rect key="frame" x="230" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="UTD-bp-rsu"/>
+                            <constraint firstAttribute="width" constant="40" id="yco-Ch-X0w"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="Primary Color"/>
+            <constraints>
+                <constraint firstItem="iq1-j3-qQ6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="05G-rT-KMi"/>
+                <constraint firstItem="0NO-kR-SLD" firstAttribute="leading" secondItem="2p1-Ex-gZo" secondAttribute="leading" id="29d-b9-f0q"/>
+                <constraint firstItem="JUe-1d-AMW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="4Ly-tz-Fc0"/>
+                <constraint firstItem="cbn-bm-PtX" firstAttribute="top" secondItem="JUe-1d-AMW" secondAttribute="bottom" constant="6" id="CHW-bC-gro"/>
+                <constraint firstItem="T2G-2w-HL7" firstAttribute="leading" secondItem="cbn-bm-PtX" secondAttribute="trailing" constant="12" id="I3u-f6-oaE"/>
+                <constraint firstAttribute="bottom" secondItem="iq1-j3-qQ6" secondAttribute="bottom" id="J4m-WW-MNq"/>
+                <constraint firstItem="0NO-kR-SLD" firstAttribute="trailing" secondItem="2p1-Ex-gZo" secondAttribute="trailing" id="L75-ue-q6y"/>
+                <constraint firstAttribute="trailing" secondItem="2p1-Ex-gZo" secondAttribute="trailing" constant="10" id="X7x-qw-wDM"/>
+                <constraint firstAttribute="trailing" secondItem="T2G-2w-HL7" secondAttribute="trailing" constant="5" id="Xxb-R5-fE4"/>
+                <constraint firstItem="cbn-bm-PtX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="ZBx-3O-mAU"/>
+                <constraint firstItem="T2G-2w-HL7" firstAttribute="centerY" secondItem="cbn-bm-PtX" secondAttribute="centerY" id="Zm3-uf-fKV"/>
+                <constraint firstItem="0NO-kR-SLD" firstAttribute="top" secondItem="2p1-Ex-gZo" secondAttribute="top" id="aWA-Qn-zpW"/>
+                <constraint firstItem="0NO-kR-SLD" firstAttribute="bottom" secondItem="2p1-Ex-gZo" secondAttribute="bottom" id="eu4-Uk-0eP"/>
+                <constraint firstAttribute="trailing" secondItem="JUe-1d-AMW" secondAttribute="trailing" constant="5" id="ewI-ul-oVX"/>
+                <constraint firstItem="iq1-j3-qQ6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fIZ-Sj-OO7"/>
+                <constraint firstItem="2p1-Ex-gZo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="lbB-yP-MRQ"/>
+                <constraint firstItem="JUe-1d-AMW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="200" id="yDd-CR-QAZ"/>
+                <constraint firstAttribute="trailing" secondItem="iq1-j3-qQ6" secondAttribute="trailing" id="zgo-rZ-pmd"/>
+            </constraints>
+            <size key="customSize" width="280" height="267"/>
+            <connections>
+                <outlet property="actorImageView" destination="iq1-j3-qQ6" id="bUe-GU-Ksy"/>
+                <outlet property="actorName" destination="JUe-1d-AMW" id="Ygf-Vy-Mjy"/>
+                <outlet property="actorPopularity" destination="T2G-2w-HL7" id="Kfp-l8-68x"/>
+                <outlet property="emptyBookMarkImageView" destination="0NO-kR-SLD" id="X9f-oS-4a4"/>
+                <outlet property="fullBookMarkImageView" destination="2p1-Ex-gZo" id="8SF-YS-SI4"/>
+            </connections>
+            <point key="canvasLocation" x="304.34782608695656" y="179.12946428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Empty Bookmark" width="83.333335876464844" height="83.333335876464844"/>
+        <image name="Full Bookmark" width="48" height="48"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="thirdImage" width="213.33332824707031" height="378.66665649414062"/>
+        <namedColor name="Primary Color">
+            <color red="0.1289999932050705" green="0.19599999487400055" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Color">
+            <color red="0.94499999284744263" green="0.81599998474121094" blue="0.039000000804662704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

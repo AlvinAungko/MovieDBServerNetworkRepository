@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-BoldItalic.ttf">
+            <string>Roboto-BoldItalic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="442" id="KGk-i7-Jjw" customClass="BestPopularFilmTableViewCell" customModule="Module4Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="609" height="442"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="609" height="442"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Popular Films And Series" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-nL-uaM">
+                        <rect key="frame" x="20" y="10" width="579" height="37"/>
+                        <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="18"/>
+                        <color key="textColor" name="Text Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2Bc-PN-OIp">
+                        <rect key="frame" x="0.0" y="57" width="609" height="385"/>
+                        <color key="backgroundColor" name="Primary Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="385" id="gTH-uH-p2o"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="hR8-Oq-c1g">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" name="Primary Color"/>
+                <constraints>
+                    <constraint firstItem="Pys-nL-uaM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="K8Q-Cv-4PY"/>
+                    <constraint firstItem="Pys-nL-uaM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VTi-yM-7fv"/>
+                    <constraint firstAttribute="trailing" secondItem="Pys-nL-uaM" secondAttribute="trailing" constant="10" id="bX2-sx-wwg"/>
+                    <constraint firstItem="2Bc-PN-OIp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f72-Rh-g8X"/>
+                    <constraint firstAttribute="bottom" secondItem="2Bc-PN-OIp" secondAttribute="bottom" id="fA1-ED-yzT"/>
+                    <constraint firstAttribute="trailing" secondItem="2Bc-PN-OIp" secondAttribute="trailing" id="gC6-zm-oW3"/>
+                    <constraint firstItem="2Bc-PN-OIp" firstAttribute="top" secondItem="Pys-nL-uaM" secondAttribute="bottom" constant="10" id="pau-vs-OXm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bestFilmsCollectionView" destination="2Bc-PN-OIp" id="XJL-6f-gVR"/>
+            </connections>
+            <point key="canvasLocation" x="16.666666666666668" y="236.38392857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Primary Color">
+            <color red="0.1289999932050705" green="0.19599999487400055" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

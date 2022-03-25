@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-BoldItalic.ttf">
+            <string>Roboto-BoldItalic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreLabelCollectionViewCell" customModule="Module4Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="236" height="77"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="236" height="77"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-U1-ede">
+                        <rect key="frame" x="0.0" y="0.0" width="236" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-wX-HJM">
+                                <rect key="frame" x="86" y="28" width="64" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" name="Text Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WC-CY-tKY">
+                                <rect key="frame" x="0.0" y="72" width="236" height="5"/>
+                                <color key="backgroundColor" name="Secondary Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="EDg-RC-xvW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6WC-CY-tKY" secondAttribute="trailing" id="F9Y-SQ-HtP"/>
+                            <constraint firstItem="w4m-wX-HJM" firstAttribute="centerX" secondItem="2ea-U1-ede" secondAttribute="centerX" id="PSt-QC-2jc"/>
+                            <constraint firstItem="6WC-CY-tKY" firstAttribute="leading" secondItem="2ea-U1-ede" secondAttribute="leading" id="cgr-4P-2Cy"/>
+                            <constraint firstItem="w4m-wX-HJM" firstAttribute="centerY" secondItem="2ea-U1-ede" secondAttribute="centerY" id="fQx-CH-Wr4"/>
+                            <constraint firstAttribute="bottom" secondItem="6WC-CY-tKY" secondAttribute="bottom" id="rU1-Gt-GtV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="2ea-U1-ede" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4qK-WK-cRO"/>
+                <constraint firstItem="2ea-U1-ede" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Q3T-hK-lXQ"/>
+                <constraint firstAttribute="trailing" secondItem="2ea-U1-ede" secondAttribute="trailing" id="bY9-Fz-wWc"/>
+                <constraint firstAttribute="bottom" secondItem="2ea-U1-ede" secondAttribute="bottom" id="dw0-HB-uR7"/>
+            </constraints>
+            <size key="customSize" width="236" height="77"/>
+            <connections>
+                <outlet property="bottomView" destination="6WC-CY-tKY" id="L55-US-BhY"/>
+                <outlet property="genreBackgroundView" destination="2ea-U1-ede" id="DK5-qc-b2w"/>
+                <outlet property="genreLabel" destination="w4m-wX-HJM" id="ikM-sP-hW1"/>
+            </connections>
+            <point key="canvasLocation" x="260.86956521739131" y="61.941964285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Primary Color">
+            <color red="0.1289999932050705" green="0.19599999487400055" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Color">
+            <color red="0.94499999284744263" green="0.81599998474121094" blue="0.039000000804662704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

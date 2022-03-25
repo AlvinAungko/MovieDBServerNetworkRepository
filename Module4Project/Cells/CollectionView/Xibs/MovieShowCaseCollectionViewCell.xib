@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-BoldItalic.ttf">
+            <string>Roboto-BoldItalic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieShowCaseCollectionViewCell" customModule="Module4Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="276"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="474" height="276"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOx-h8-ukv">
+                        <rect key="frame" x="0.0" y="0.0" width="474" height="276"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MovieShowCaseImage" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-40-Hj6">
+                                <rect key="frame" x="0.0" y="0.0" width="474" height="276"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSs-uv-ZYq">
+                                <rect key="frame" x="0.0" y="0.0" width="474" height="276"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demon Slayer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-9z-EYJ">
+                                        <rect key="frame" x="20" y="125" width="434" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="18"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 January 2022" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6Q-c7-JSH">
+                                        <rect key="frame" x="20" y="156.5" width="111.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Roboto-BoldItalic" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" name="Secondary Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iuf-9z-EYJ" firstAttribute="leading" secondItem="bSs-uv-ZYq" secondAttribute="leading" constant="20" id="83u-E3-43r"/>
+                                    <constraint firstItem="g6Q-c7-JSH" firstAttribute="top" secondItem="iuf-9z-EYJ" secondAttribute="bottom" constant="10" id="8hx-ex-rHT"/>
+                                    <constraint firstItem="g6Q-c7-JSH" firstAttribute="leading" secondItem="bSs-uv-ZYq" secondAttribute="leading" constant="20" id="NHm-u2-spV"/>
+                                    <constraint firstItem="iuf-9z-EYJ" firstAttribute="top" secondItem="bSs-uv-ZYq" secondAttribute="top" constant="125" id="Qs0-jW-VJ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="iuf-9z-EYJ" secondAttribute="trailing" constant="20" id="daa-Ir-IVi"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play" translatesAutoresizingMaskIntoConstraints="NO" id="waE-xo-rAz">
+                                <rect key="frame" x="187" y="113" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A6J-Ek-kPG"/>
+                                    <constraint firstAttribute="height" constant="50" id="zaw-ey-yQU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary Color"/>
+                        <constraints>
+                            <constraint firstItem="waE-xo-rAz" firstAttribute="centerX" secondItem="aOx-h8-ukv" secondAttribute="centerX" id="1Oa-Dj-4RX"/>
+                            <constraint firstAttribute="bottom" secondItem="pcq-40-Hj6" secondAttribute="bottom" id="2UL-k4-TDo"/>
+                            <constraint firstItem="bSs-uv-ZYq" firstAttribute="leading" secondItem="aOx-h8-ukv" secondAttribute="leading" id="HJN-1q-hky"/>
+                            <constraint firstItem="pcq-40-Hj6" firstAttribute="leading" secondItem="aOx-h8-ukv" secondAttribute="leading" id="Htt-7Z-8Jc"/>
+                            <constraint firstItem="waE-xo-rAz" firstAttribute="centerY" secondItem="aOx-h8-ukv" secondAttribute="centerY" id="O3U-Tl-yRG"/>
+                            <constraint firstAttribute="trailing" secondItem="bSs-uv-ZYq" secondAttribute="trailing" id="T4O-EX-B5f"/>
+                            <constraint firstAttribute="bottom" secondItem="bSs-uv-ZYq" secondAttribute="bottom" id="TiI-ok-NEM"/>
+                            <constraint firstItem="pcq-40-Hj6" firstAttribute="top" secondItem="aOx-h8-ukv" secondAttribute="top" id="bsU-Qc-AyM"/>
+                            <constraint firstAttribute="trailing" secondItem="pcq-40-Hj6" secondAttribute="trailing" id="fCx-1T-lpM"/>
+                            <constraint firstItem="bSs-uv-ZYq" firstAttribute="top" secondItem="aOx-h8-ukv" secondAttribute="top" id="hdA-8c-LgF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="aOx-h8-ukv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tp1-TX-H5i"/>
+                <constraint firstAttribute="trailing" secondItem="aOx-h8-ukv" secondAttribute="trailing" id="Xpq-Qi-bT9"/>
+                <constraint firstAttribute="bottom" secondItem="aOx-h8-ukv" secondAttribute="bottom" id="auN-Pr-3xc"/>
+                <constraint firstItem="aOx-h8-ukv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="h6G-Y0-jm7"/>
+            </constraints>
+            <size key="customSize" width="474" height="276"/>
+            <connections>
+                <outlet property="entireViewOfShowCaseContent" destination="aOx-h8-ukv" id="4rd-xb-TRy"/>
+                <outlet property="movieOrignialTitle" destination="iuf-9z-EYJ" id="tUb-hz-wJO"/>
+                <outlet property="movieShowCaseImage" destination="pcq-40-Hj6" id="QRM-jI-SFI"/>
+                <outlet property="releaseDateLabel" destination="g6Q-c7-JSH" id="EJX-Mz-fht"/>
+            </connections>
+            <point key="canvasLocation" x="179.71014492753625" y="164.0625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="MovieShowCaseImage" width="640" height="350.66665649414062"/>
+        <image name="Play" width="33.333332061767578" height="33.333332061767578"/>
+        <namedColor name="Primary Color">
+            <color red="0.1289999932050705" green="0.19599999487400055" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Color">
+            <color red="0.94499999284744263" green="0.81599998474121094" blue="0.039000000804662704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
