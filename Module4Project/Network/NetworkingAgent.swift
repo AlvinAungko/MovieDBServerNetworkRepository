@@ -48,9 +48,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchPopularMovie(completion:@escaping(MDBResponse<PopularMovieList>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/movie/popular?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of: PopularMovieList.self ){
+        AF.request(MovieDBServerNetwork.popularMovie).responseDecodable(of: PopularMovieList.self ){
             response in
             
             switch response.result
@@ -66,8 +65,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchPopularSeries(completion:@escaping(MDBResponse<PopulaBestrSeries>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/tv/popular?api_key=\(AppConstants.apiKey)"
-        AF.request(url).responseDecodable(of: PopulaBestrSeries.self ) {
+        
+        AF.request(MovieDBServerNetwork.popularSeries).responseDecodable(of: PopulaBestrSeries.self ) {
             response in
             
             switch response.result
@@ -83,8 +82,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchGenresListForMovies(completion:@escaping(MDBResponse<GenresModel>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/genre/movie/list?api_key=\(AppConstants.apiKey)"
-        AF.request(url).responseDecodable(of:GenresModel.self){
+      
+        AF.request(MovieDBServerNetwork.genreList).responseDecodable(of:GenresModel.self){
             response in
             
             switch response.result
@@ -100,9 +99,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func  fetchTheMovieDetail(movieID:Int,completion:@escaping(MDBResponse<MovieDetail>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/movie/\(movieID)?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:MovieDetail.self){
+        
+        AF.request(MovieDBServerNetwork.movieDetail(movieID)).responseDecodable(of:MovieDetail.self){
             response in
             
             switch response.result
@@ -119,9 +118,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheSerieDetail(seriesID:Int,completion:@escaping(MDBResponse<SeriesDetail>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/tv/\(seriesID)?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:SeriesDetail.self){
+        
+        AF.request(MovieDBServerNetwork.seriesDetail(seriesID)).responseDecodable(of:SeriesDetail.self){
             respone in
             
             switch respone.result
@@ -139,8 +138,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheTopRatedMovie(page:Int,completion:@escaping(MDBResponse<TopRatingMovie>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/movie/top_rated?page=\(page)&api_key=\(AppConstants.apiKey)"
-        AF.request(url).responseDecodable(of:TopRatingMovie.self){
+        
+        AF.request(MovieDBServerNetwork.topRatedMovie(page)).responseDecodable(of:TopRatingMovie.self){
             response in
             
             switch response.result
@@ -158,9 +157,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheActorList(page:Int,completion:@escaping(MDBResponse<ActorDataModel>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/person/popular?page=\(page)&api_key=\(AppConstants.apiKey)"
+       
         
-        AF.request(url).responseDecodable(of:ActorDataModel.self) {
+        AF.request(MovieDBServerNetwork.actorsList(page)).responseDecodable(of:ActorDataModel.self) {
             response in
             
             switch response.result
@@ -177,9 +176,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheCreditsAccordingToTheMovieID(movieID:Int,completion:@escaping(MDBResponse<CreditDataModel>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/movie/\(movieID)/credits?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:CreditDataModel.self){
+        
+        AF.request(MovieDBServerNetwork.creditsMovieID(movieID)).responseDecodable(of:CreditDataModel.self){
             response in
             
             switch response.result
@@ -196,8 +195,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheCastAccordingToTheSeriesID(seriesID:Int,completion:@escaping(MDBResponse<CreditDataModel>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/tv/\(seriesID)/credits?api_key=\(AppConstants.apiKey)"
-        AF.request(url).responseDecodable(of:CreditDataModel.self)
+        
+        AF.request(MovieDBServerNetwork.creditsSeriesID(seriesID)).responseDecodable(of:CreditDataModel.self)
         {
             response in
             
@@ -213,9 +212,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheTvTrailers(seriesID:Int,completion:@escaping(MDBResponse<TVTrailer>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/tv/\(seriesID)/videos?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:TVTrailer.self){
+        AF.request(MovieDBServerNetwork.tvTrailers(seriesID)).responseDecodable(of:TVTrailer.self){
             response in
             
             switch response.result
@@ -232,9 +230,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheMovieTrailers(moviesID:Int,completion:@escaping(MDBResponse<TVTrailer>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/movie/\(moviesID)/videos?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:TVTrailer.self){
+        
+        AF.request(MovieDBServerNetwork.movieTrailers(moviesID)).responseDecodable(of:TVTrailer.self){
             response in
             
             switch response.result
@@ -251,8 +249,8 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheDetailOfTheActor(actorID:Int,completion:@escaping(MDBResponse<ActorDetailDataModel>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/person/\(actorID)?api_key=\(AppConstants.apiKey)"
-        AF.request(url).responseDecodable(of:ActorDetailDataModel.self) {
+        
+        AF.request(MovieDBServerNetwork.detailOfTheActor(actorID)).responseDecodable(of:ActorDetailDataModel.self) {
             response in
             
             switch response.result
@@ -268,9 +266,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func fetchTheListOfCombinedMoviesThatTheActorStaredIn(actorID:Int,completion:@escaping(MDBResponse<ActorCombinedMovie>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/person/\(actorID)/movie_credits?api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:ActorCombinedMovie.self){
+        
+        AF.request(MovieDBServerNetwork.combinedMovies(actorID)).responseDecodable(of:ActorCombinedMovie.self){
             response in
             
             switch response.result
@@ -285,9 +283,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func searchTheMovie(movieName:String,page:Int,completion:@escaping(MDBResponse<UpcomingMovie>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/search/movie?page=\(page)&query=\(movieName)&api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:UpcomingMovie.self)
+        
+        AF.request(MovieDBServerNetwork.searchMovie(movieName, page)).responseDecodable(of:UpcomingMovie.self)
         {
             response in
             switch response.result
@@ -303,9 +301,9 @@ struct NetworkingAgentAPI:MovieDBNetworkProtocol
     
     func searchTheSeries(seriesName:String,page:Int,completion:@escaping(MDBResponse<PopulaBestrSeries>)->Void)
     {
-        let url = "\(AppConstants.baseUrl)/search/tv?page=\(page)&query=\(seriesName)&api_key=\(AppConstants.apiKey)"
         
-        AF.request(url).responseDecodable(of:PopulaBestrSeries.self)
+        
+        AF.request(MovieDBServerNetwork.searchSeries(seriesName, page)).responseDecodable(of:PopulaBestrSeries.self)
         {
             response in
             switch response.result
